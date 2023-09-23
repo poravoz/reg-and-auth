@@ -5,6 +5,7 @@ import { HttpException, HttpStatus } from '@nestjs/common';
 import PostgresErrorCode from "../database/postgresErrorCodes.enum";
 import { JwtService } from "@nestjs/jwt";
 import { ConfigService } from "@nestjs/config";
+import TokenPayload  from "./interfaces/tokenPayload.interface";
 
 export class AuthenticationService {
     constructor(
