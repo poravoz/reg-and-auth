@@ -12,6 +12,8 @@ body {
     max-width: 400px;
     margin: 0 auto;
     text-align: center;
+    margin-left: 25px;
+    
 }
 
 hr {
@@ -125,11 +127,18 @@ b {
 }
 
 .button_login {
-    margin-left: 40px;
+    margin-left: 50px;
 }
 
+
 .login {
-    margin-left: 55px;
+    margin-left: 60px;
+}
+
+.center-container {
+    position: absolute;
+    top:15px;
+    right: 15px;
 }
 
 
