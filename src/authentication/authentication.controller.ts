@@ -2,9 +2,9 @@ import { Body, Req, Controller, HttpCode, Post, UseGuards, Res, Get } from '@nes
 import { Response } from 'express';
 import { AuthenticationService } from './authentication.service';
 import RegisterDto from './dto/register.dto';
-import RequestWithUser from './requestWithUser.interface';
-import { LocalAuthenticationGuard } from './localAuthentication.guard';
-import JwtAuthenticationGuard from './jwt-authentication.guard';
+import RequestWithUser from './interfaces/requestWithUser.interface';
+import { LocalAuthenticationGuard } from './jwt-strategy/localAuthentication.guard';
+import JwtAuthenticationGuard from './jwt-strategy/jwt-authentication.guard';
 
 @Controller('authentication')
 export class AuthenticationController {
