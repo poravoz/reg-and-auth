@@ -2,7 +2,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn("uuid")
   public id?: number;
 
   @Column({ unique: true })
