@@ -1,11 +1,22 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color:azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 hr {
     margin-left: 0px;
-    max-width: 500px;
+    max-width: 300px;
     margin-bottom: 15px;
     margin-top: 15px;
 }
@@ -21,6 +32,7 @@ b {
     background-color: #dbdbd7;
     border: 0px;
     border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 .name:hover {
@@ -30,45 +42,6 @@ b {
 .name:active {
     background-color: #dbdbd7;
 }
-
-.surname {
-    font-size: 16px;
-    padding: 15px;
-    text-align: center;
-    background-color: #dbdbd7;
-    border: 0px;
-    margin-left: 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-}
-
-.surname:hover {
-    opacity: 0.9;
-}
-
-.surname:active {
-    background-color: #dbdbd7;
-}
-
-
-.login {
-    font-size: 16px;
-    padding: 15px;
-    text-align: center;
-    background-color: #dbdbd7;
-    border: 0px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-}
-
-.login:hover {
-    opacity: 0.9;
-}
-
-.login:active {
-    background-color: #dbdbd7;
-}
-
 
 .password {
     font-size: 16px;
@@ -94,7 +67,6 @@ b {
     text-align: center;
     background-color: #dbdbd7;
     border: 0px;
-    margin-left: 15px;
     border-radius: 10px;
 }
 
@@ -114,6 +86,7 @@ b {
     border: 0px;
     margin-bottom: 10px;
     border-radius: 10px;
+    margin-bottom: 15px;
    
 }
 
@@ -139,6 +112,7 @@ b {
     border-radius: 10px;
     border: 1px solid;
     border-color: #222;
+    margin-left: 25px;
 }
 
 .button:hover {
