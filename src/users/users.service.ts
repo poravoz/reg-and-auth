@@ -11,6 +11,10 @@ export class UsersService {
     private usersRepository: Repository<User>
   ) {}
 
+  async getAll(): Promise<User[]> {
+    return await this.usersRepository.find();
+  }
+
   async getByEmail(email: string) {
     const user = await this.usersRepository.findOne({ where: {email} });
     if (user) {
@@ -31,5 +35,14 @@ export class UsersService {
     const newUser = await this.usersRepository.create(userData);
     await this.usersRepository.save(newUser);
     return newUser;
+  }
+
+  async delete(id: number) {
+    const user = await this.usersRepository.findOne({where: {id}});
+    if (!user) {
+      throw new HttpException('User not found', HttpStatus.NOT_FOUND);
+    }
+    await this.usersRepository.delete(id);
+    return {message: 'User deleted'};
   }
 }
