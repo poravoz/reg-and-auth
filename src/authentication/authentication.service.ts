@@ -6,6 +6,7 @@ import PostgresErrorCode from '../database/postgresErrorCode.enum';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import TokenPayload from './interfaces/tokenPayload.interface';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class AuthenticationService {
@@ -22,8 +23,9 @@ export class AuthenticationService {
         ...registrationData,
         password: hashedPassword,
       });
-      createdUser.password = undefined;
+      createdUser.password = undefined;  
       return createdUser;
+      
     } catch (error) {
       if (error?.code === PostgresErrorCode.UniqueViolation) {
         throw new HttpException('User with that email already exists', HttpStatus.BAD_REQUEST);
