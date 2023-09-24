@@ -6,6 +6,7 @@ import PostgresErrorCode from '../database/postgresErrorCode.enum';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import TokenPayload from './interfaces/tokenPayload.interface';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class AuthenticationService {
