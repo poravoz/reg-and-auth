@@ -103,7 +103,7 @@ b {
     color: #000;
 }
 
-.button {
+.button, .button_login {
     color: #fff;
     font-size: 20px;
     padding: 15px 40px;
@@ -115,12 +115,21 @@ b {
     margin-left: 25px;
 }
 
-.button:hover {
+.button:hover, .button_login:hover {
     opacity: 0.9;
     transition: 0.15 linear;
 }
 
-.button:active {
-    background-color: #000;
-    
+.button:active, .button_login:active {
+    background-color: #000;   
 }
+
+.button_login {
+    margin-left: 40px;
+}
+
+.login {
+    margin-left: 55px;
+}
+
+
