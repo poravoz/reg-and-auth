@@ -105,7 +105,7 @@ b {
     color: #000;
 }
 
-.button, .button_login {
+.button, .button_login, .button_log-out {
     color: #fff;
     font-size: 20px;
     padding: 15px 40px;
@@ -117,12 +117,12 @@ b {
     margin-left: 25px;
 }
 
-.button:hover, .button_login:hover {
+.button:hover, .button_login:hover, .button_log-out:hover {
     opacity: 0.9;
     transition: 0.15 linear;
 }
 
-.button:active, .button_login:active {
+.button:active, .button_login:active, .button_log-out:active {
     background-color: #000;   
 }
 
@@ -147,5 +147,9 @@ b {
     right: 15px;
 }
 
-
+.button_log-out {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
 
