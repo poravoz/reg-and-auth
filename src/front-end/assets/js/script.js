@@ -2,7 +2,7 @@ window.onload = function() {
     const form = document.querySelector('form');
   
     form.addEventListener('submit', async function(event) {
-      event.preventDefault(); // Предотвращаем стандартное поведение формы (перезагрузка страницы)
+      event.preventDefault(); 
   
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
@@ -20,7 +20,6 @@ window.onload = function() {
         return;
       }
   
-      // Проверяем, существует ли пользователь с таким email
       const response = await fetch('http://localhost:3000/authentication/check-email', {
         method: 'POST',
         headers: {
@@ -35,7 +34,6 @@ window.onload = function() {
         return;
       }
   
-      // Если пользователь с таким email не существует, отправляем запрос на регистрацию
       const dataToServer = {
         name: name,
         email: email,
