@@ -6,7 +6,7 @@ import PostgresErrorCode from '../database/postgresErrorCode.enum';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import TokenPayload from './interfaces/tokenPayload.interface';
-import { v4 as uuidv4 } from 'uuid';
+import User from 'src/users/entities/user.entity';
 
 @Injectable()
 export class AuthenticationService {
@@ -32,6 +32,11 @@ export class AuthenticationService {
       }
       throw new HttpException('Something went wrong', HttpStatus.INTERNAL_SERVER_ERROR);
     }
+  }
+
+  public async checkEmail(email: string): Promise<User> {
+    const existingUser = await this.usersService.findByEmail(email);
+    return existingUser;
   }
 
   public getCookieWithJwtToken(userId: number) {

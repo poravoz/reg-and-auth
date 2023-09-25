@@ -19,7 +19,7 @@ window.onload = function() {
         alert('Password mismatch');
         return;
       }
-/*
+
       const response = await fetch('http://localhost:3000/authentication/check-email', {
         method: 'POST',
         headers: {
@@ -27,11 +27,18 @@ window.onload = function() {
         },
         body: JSON.stringify({ email: email })
       });
-*/
-      const data = await response.json();
-      if (data.emailExists) {
-        alert('User with this email already exists');
-        return;
+      
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      
+      try {
+        const data = await response.json();
+        if (data.emailExists) {
+          alert('User with this email already exists');
+        }
+      } catch (error) {
+        console.error('Error parsing JSON:', error);
       }
   
       const dataToServer = {

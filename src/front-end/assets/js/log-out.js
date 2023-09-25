@@ -14,7 +14,7 @@ window.onload = function() {
   
         if (response.ok) {
           console.log('Successfully logged out');
-          window.location.href = '../login.html'; 
+          window.location.href = '../authentication.html'; 
         } else {
           alert('Logout failed');
         }
