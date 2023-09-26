@@ -70,6 +70,7 @@ b {
     background-color: #dbdbd7;
     border: 0px;
     border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 .repeat_password:hover {
@@ -105,7 +106,7 @@ b {
     color: #000;
 }
 
-.button, .button_login, .button_log-out {
+.button, .button_login, .button_log-out, .button_reg  {
     color: #fff;
     font-size: 20px;
     padding: 15px 40px;
@@ -117,17 +118,21 @@ b {
     margin-left: 25px;
 }
 
-.button:hover, .button_login:hover, .button_log-out:hover {
+.button:hover, .button_login:hover, .button_log-out:hover, .button_reg:hover {
     opacity: 0.9;
     transition: 0.15 linear;
 }
 
-.button:active, .button_login:active, .button_log-out:active {
+.button:active, .button_login:active, .button_log-out:active, .button_reg:active {
     background-color: #000;   
 }
 
 .button_login {
     margin-left: 45px;
+}
+
+.button_reg {
+    margin-left: 60px;
 }
 
 
@@ -153,3 +158,39 @@ b {
     right: 15px;
 }
 
+.phone {
+    font-size: 16px;
+    padding: 15px;
+    text-align: center;
+    background-color: #dbdbd7;
+    border: 0px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.phone :hover {
+    opacity: 0.9;
+}
+
+.phone :active {
+    background-color: #dbdbd7;
+}
+
+
+.age {
+    font-size: 16px;
+    padding: 15px;
+    text-align: center;
+    background-color: #dbdbd7;
+    border: 0px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.age :hover {
+    opacity: 0.9;
+}
+
+.age :active {
+    background-color: #dbdbd7;
+}
