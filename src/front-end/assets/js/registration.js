@@ -29,6 +29,9 @@ window.onload = function() {
     } else if (!/^\d{10}$/.test(phone)) {
       alert('Phone number should be 10 digits long');
       return;
+    } else if (!/^.{5,}@gmail\.com$/.test(email)) {
+      alert('Email should have at least 5 characters before @gmail.com');
+      return;
     }
 
     const response = await fetch('http://localhost:3000/authentication/check-email', {
