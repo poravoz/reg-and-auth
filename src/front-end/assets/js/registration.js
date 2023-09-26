@@ -20,6 +20,15 @@ window.onload = function() {
     } else if (password !== repeatPassword) {
       alert('Password mismatch');
       return;
+    } else if (!/^[a-zA-Zа-яА-Я]+$/.test(name)) {
+      alert('Name should only contain letters');
+      return;
+    } else if (age < 18 || age > 80) {
+      alert('Age should be between 18 and 80');
+      return;
+    } else if (!/^\d{11}$/.test(phone)) {
+      alert('Phone number should be 10 digits long');
+      return;
     }
 
     const response = await fetch('http://localhost:3000/authentication/check-email', {
