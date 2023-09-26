@@ -17,11 +17,6 @@ export class AuthenticationController {
     return this.authenticationService.register(registrationData);
   }
 
-  @Post('check-email')
-  async checkEmail(@Body() data: { email: string }) {
-    return this.authenticationService.checkEmail(data.email);
-  }
-
   @HttpCode(200)
   @UseGuards(LocalAuthenticationGuard)
   @Post('log-in')
