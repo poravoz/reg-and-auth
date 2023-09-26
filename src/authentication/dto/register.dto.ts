@@ -5,7 +5,6 @@ export class RegisterDto {
   password: string;
   phone: string;
   age: number;
-
 }
 
 export default RegisterDto;

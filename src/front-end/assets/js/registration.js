@@ -26,7 +26,7 @@ window.onload = function() {
     } else if (age < 18 || age > 80) {
       alert('Age should be between 18 and 80');
       return;
-    } else if (!/^\d{11}$/.test(phone)) {
+    } else if (!/^\d{10}$/.test(phone)) {
       alert('Phone number should be 10 digits long');
       return;
     }
