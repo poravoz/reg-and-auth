@@ -1,5 +1,5 @@
 window.onload = function() {
-    const form = document.querySelector('form');
+    const form = document.getElementById("form");
   
     form.addEventListener('submit', async function(event) {
       event.preventDefault(); 

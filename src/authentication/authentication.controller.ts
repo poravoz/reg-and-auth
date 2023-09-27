@@ -22,6 +22,11 @@ export class AuthenticationController {
     return this.authenticationService.checkEmail(data.email);
   }
 
+  @Post('check-phone')
+  async checkPhone(@Body() data: { phone: string }) {
+    return this.authenticationService.checkPhone(data.phone);
+  }
+
   @HttpCode(200)
   @UseGuards(LocalAuthenticationGuard)
   @Post('log-in')

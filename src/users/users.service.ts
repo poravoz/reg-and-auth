@@ -28,6 +28,10 @@ export class UsersService {
     return await this.usersRepository.findOne({ where: { email }});
   }
 
+  async findByPhone(phone: string): Promise<User> {
+    return await this.usersRepository.findOne({ where: { phone }});
+  }
+
   async getById(id: number) {
     const user = await this.usersRepository.findOne({ where: {id} });
     if (user) {

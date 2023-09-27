@@ -39,6 +39,11 @@ export class AuthenticationService {
     return existingUser;
   }
 
+  public async checkPhone(phone: string): Promise<User> {
+    const existingUser = await this.usersService.findByPhone(phone);
+    return existingUser;
+  }
+
   public getCookieWithJwtToken(userId: number) {
     const payload: TokenPayload = { userId };
     const token = this.jwtService.sign(payload);

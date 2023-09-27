@@ -1,5 +1,5 @@
 window.onload = function() {
-  const form = document.querySelector('form');
+  const form = document.getElementById('form');
 
   form.addEventListener('submit', async function(event) {
     event.preventDefault();
@@ -22,6 +22,9 @@ window.onload = function() {
       return;
     } else if (!/^[a-zA-Zа-яА-Я]+$/.test(name)) {
       alert('Name should only contain letters');
+      return;
+    } else if (name.length < 2) {
+      alert('Name should be at least 2 characters long');
       return;
     } else if (age < 18 || age > 80) {
       alert('Age should be between 18 and 80');
@@ -50,6 +53,28 @@ window.onload = function() {
       const data = await response.json();
       if (data.emailExists) {
         alert('User with this email already exists');
+        return;
+      }
+    } catch (error) {
+      console.error('Error parsing JSON:', error);
+    }
+
+    const responseCheckPhone = await fetch('http://localhost:3000/authentication/check-phone', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ phone: phone })
+    });
+
+    if (!responseCheckPhone.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    try {
+      const dataCheckPhone = await responseCheckPhone.json();
+      if (dataCheckPhone.phoneExists) {
+        alert('User with this phone number already exists');
         return;
       }
     } catch (error) {
