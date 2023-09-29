@@ -13,12 +13,6 @@ class User {
 
   @Column()
   public password: string;
-
-  @Column()
-  phone: string;
-
-  @Column()
-  age: number;
 }
 
 export default User;
